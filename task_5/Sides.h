@@ -4,29 +4,35 @@ class Sides :
     public Formulas
 {
 private:
-    int a;
-    int b; //стороны треуголька
-    int c;
+    double a;
+    double b; //стороны треуголька
+    double c;
 public: 
-    void setA(int a);
-    void setB(int b);
-    void setC(int c);
+    void setA(double a);
+    void setB(double b);
+    void setC(double c);
 
-    int getA();
-    int getB();
-    int getC();
+    double getA();
+    double getB();
+    double getC();
     
     double median() override; 
     double height() override;
     double bisector() override;
 
-    bool isExists(int a, int b, int c);
+    bool isExists(double a, double b, double c);
 
-    Sides(int a, int b, int c) {
+    Sides(double a, double b, double c) {
         if (isExists(a, b, c)) {
             this->a = a;
             this->b = b;
             this->c = c;
+        }
+        else
+        {
+            this->a = 0;
+            this->b = 0;
+            this->c = 0;
         }
     }
 };
